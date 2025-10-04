@@ -1,0 +1,82 @@
+.chat {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 320px;
+    background: #111;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.head {
+    padding: 10px 12px;
+    font-weight: 600;
+    background: #1f2937;
+}
+
+.messages {
+    flex: 1;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.msg {
+    display: grid;
+    gap: 2px;
+}
+
+.msg.me .bubble {
+    background: #2563eb;
+    margin-left: auto;
+}
+
+.bubble {
+    background: #374151;
+    padding: 8px 10px;
+    border-radius: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.sender {
+    font-size: 11px;
+    opacity: .65;
+}
+
+.time {
+    font-size: 10px;
+    opacity: .5;
+}
+
+.input {
+    display: flex;
+    gap: 6px;
+    padding: 8px;
+    background: #0b0b0b;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0b0b0b;
+    color: #fff;
+}
+
+button {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}

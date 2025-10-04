@@ -1,0 +1,30 @@
+<div class="chat">
+    <!-- En-tête du widget -->
+    <div class="head">Support en ligne</div>
+
+    <!-- Zone d'affichage des messages -->
+    <div class="messages">
+        <!-- Boucle sur tous les messages émis/reçus -->
+        <div *ngFor="let m of (chat.messages$ | async)" class="msg" [class.me]="m.sender===username">
+            <!-- ajoute la classe "me" si le message vient du client -->
+
+            <!-- Nom de l’expéditeur -->
+            <div class="sender">{{ m.sender }}</div>
+
+            <!-- Contenu du message -->
+            <div class="bubble">{{ m.content }}</div>
+
+            <!-- Heure du message -->
+            <div class="time">{{ m.timestamp | date:'shortTime' }}</div>
+        </div>
+    </div>
+
+    <!-- Zone de saisie d'un nouveau message -->
+    <div class="input">
+        <!-- Champ texte lié à la variable "draft" + envoi avec Entrée -->
+        <input [(ngModel)]="draft" placeholder="Votre message..." (keyup.enter)="send()" />
+
+        <!-- Bouton d'envoi -->
+        <button (click)="send()">Envoyer</button>
+    </div>
+</div>
